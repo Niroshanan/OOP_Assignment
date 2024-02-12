@@ -17,7 +17,7 @@ public class Canvas {
     public double totalArea(){
         double totalArea = 0;
         for ( Shape shape: canvasElements) {
-            totalArea += shape.totalArea();
+            totalArea += shape.calculateArea();
         }
         return totalArea;
     }

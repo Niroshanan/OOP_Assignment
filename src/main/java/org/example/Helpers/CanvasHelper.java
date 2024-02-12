@@ -1,6 +1,7 @@
 package org.example.Helpers;
 
 import org.example.canvas.Canvas;
+import org.example.shapes.Rectangle;
 import org.example.shapes.Square;
 
 import java.util.Scanner;
@@ -18,6 +19,7 @@ public class CanvasHelper {
         }
         catch (Exception e){
             System.out.println(e);
+            addNewElement();
         }
         switch (elementInput){
             case 1:
@@ -34,8 +36,8 @@ public class CanvasHelper {
                 System.out.print("Enter width of rectangle:");
                 double width = takeUserInput();
                 if(length>0 && width>0){
-                    Square square = new Square(length);
-                    canvas.addElement(square);
+                    Rectangle rectangle =  new Rectangle(length,width);
+                    canvas.addElement(rectangle);
                 }
                 break;
             case 3:
@@ -51,7 +53,7 @@ public class CanvasHelper {
     }
 
     private double takeUserInput(){
-        Double value= 0.0;
+        double value= 0.0;
         try {
             value = canvasScanner.nextDouble();
         }

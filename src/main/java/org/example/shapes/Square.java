@@ -1,12 +1,12 @@
 package org.example.shapes;
 
 public class Square implements Shape {
-    double sideLength;
+    private double sideLength;
     public Square(double len){
         this.sideLength = len;
     }
     @Override
-    public double totalArea() {
+    public double calculateArea() {
         return sideLength * sideLength;
     }
 }
