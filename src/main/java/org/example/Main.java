@@ -9,36 +9,38 @@ import static java.lang.System.exit;
 public class Main {
 
     static Scanner scanner = new Scanner(System.in);
-    static CanvasHelper canvasHelper =  new CanvasHelper();
+    static CanvasHelper canvasHelper = new CanvasHelper();
 
     public static void main(String[] args) {
         loadMenu();
     }
-    static void loadMenu(){
+
+    static void loadMenu() {
         System.out.println("-----AREA CALCULATOR-----");
         System.out.println("1 -Add new Element\n2- Get Total Area \n9- EXIT ");
-        String inputString =scanner.nextLine();
+        System.out.print("Enter Input: ");
+        String inputString = scanner.nextLine();
         int menuInput = 0;
         try {
             menuInput = Integer.parseInt(inputString);
-        }catch (Exception e){
-            System.out.println("Error "+ e);
+        } catch (Exception e) {
+            System.out.println(e.getClass().getSimpleName());
             loadMenu();
         }
-        switch (menuInput){
-            case 1:
+        switch (menuInput) {
+            case 1 -> {
                 canvasHelper.addNewElement();
                 loadMenu();
-                break;
-            case 2:
+            }
+            case 2 -> {
                 canvasHelper.calculateTotalArea();
                 loadMenu();
-                break;
-            case 9:
+            }
+            case 9 -> {
                 System.out.println("Exited\n");
                 exit(0);
-            default:
-                loadMenu();
+            }
+            default -> loadMenu();
         }
     }
 }
