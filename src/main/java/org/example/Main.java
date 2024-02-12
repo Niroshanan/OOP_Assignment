@@ -16,7 +16,7 @@ public class Main {
     }
 
     static void loadMenu() {
-        System.out.println("-----AREA CALCULATOR-----");
+        System.out.println("\n-----AREA CALCULATOR-----");
         System.out.println("1 -Add new Element\n2- Get Total Area \n9- EXIT ");
         System.out.print("Enter Input: ");
         String inputString = scanner.nextLine();
