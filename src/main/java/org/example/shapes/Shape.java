@@ -1,5 +1,12 @@
 package org.example.shapes;
 
-public interface Shape {
-    double calculateArea();
+public abstract class Shape {
+    double thickness;
+
+    public Shape(double thickness) {
+        this.thickness = thickness;
+    }
+
+    public abstract double calculateArea();
+    public abstract double calculateAreaWithBorders();
 }

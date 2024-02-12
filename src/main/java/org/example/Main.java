@@ -17,14 +17,18 @@ public class Main {
 
     static void loadMenu() {
         System.out.println("\n-----AREA CALCULATOR-----");
-        System.out.println("1 -Add new Element\n2- Get Total Area \n9- EXIT ");
+        System.out.println("1 -Add New Element\n" +
+                "2- Get Total Area Including Border\n" +
+                "3- Get Total Area of Only border \n" +
+                "4- Get Total Area Without Border \n" +
+                "9- EXIT ");
         System.out.print("Enter Input: ");
         String inputString = scanner.nextLine();
         int menuInput = 0;
         try {
             menuInput = Integer.parseInt(inputString);
         } catch (Exception e) {
-            System.out.println(e.getClass().getSimpleName());
+            System.out.println("Invalid Input");
             loadMenu();
         }
         switch (menuInput) {
@@ -33,14 +37,25 @@ public class Main {
                 loadMenu();
             }
             case 2 -> {
-                canvasHelper.calculateTotalArea();
+                canvasHelper.calculateTotalAreaIncludingBorder();
+                loadMenu();
+            }
+            case 3 -> {
+                canvasHelper.calculateTotalAreaOfBorder();
+                loadMenu();
+            }
+            case 4 -> {
+                canvasHelper.calculateTotalAreaWithoutBorder();
                 loadMenu();
             }
             case 9 -> {
                 System.out.println("Exited\n");
                 exit(0);
             }
-            default -> loadMenu();
+            default ->{
+                System.out.println("Incorrect Input");
+                loadMenu();
+            }
         }
     }
 }

@@ -21,5 +21,13 @@ public class Canvas {
         }
         return totalArea;
     }
+    public double totalAreaWithBorder(){
+
+        double totalAreaOfBorder = 0;
+        for (Shape shape: canvasElements) {
+            totalAreaOfBorder += shape.calculateAreaWithBorders();
+        }
+        return totalAreaOfBorder;
+    }
 
 }
