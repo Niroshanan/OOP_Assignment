@@ -6,7 +6,7 @@ import org.example.shapes.*;
 import java.util.Scanner;
 
 public class CanvasHelper {
-    static Canvas canvas = new Canvas();
+    Canvas canvas = new Canvas();
     Scanner canvasScanner = new Scanner(System.in);
 
     public void addNewElement() {
