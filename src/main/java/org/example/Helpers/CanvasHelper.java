@@ -32,7 +32,6 @@ public class CanvasHelper {
             }
             default -> {
                 System.out.println("Incorrect Input");
-                addNewElement();
             }
         }
     }
