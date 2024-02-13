@@ -30,9 +30,7 @@ public class CanvasHelper {
             case 5 -> addTrapezoid();
             case 9 -> {
             }
-            default -> {
-                System.out.println("Incorrect Input");
-            }
+            default -> System.out.println("Incorrect Input");
         }
     }
 
@@ -102,7 +100,7 @@ public class CanvasHelper {
     }
 
     public void calculateTotalAreaOfBorder() {
-        System.out.println("Total Area of Border is: " + canvas.totalAreaWithoutBorder());
+        System.out.println("Total Area of Border is: " + canvas.totalAreaOfBorder());
     }
 
     public void calculateTotalAreaWithoutBorder() {

@@ -28,12 +28,12 @@ public class Canvas {
         }
         return totalAreaWithBorder;
     }
-    public double totalAreaWithoutBorder(){
-        double totalAreaWithoutBorder = 0;
+    public double totalAreaOfBorder(){
+        double totalAreaOfBorder = 0;
         for (Shape shape: canvasElements) {
-            totalAreaWithoutBorder += shape.calculateAreaWithoutBorders();
+            totalAreaOfBorder += shape.calculateAreaOfBorders();
         }
-        return totalAreaWithoutBorder;
+        return totalAreaOfBorder;
     }
 
 }
