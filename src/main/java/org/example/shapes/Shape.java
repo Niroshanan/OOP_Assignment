@@ -9,4 +9,7 @@ public abstract class Shape {
 
     public abstract double calculateArea();
     public abstract double calculateAreaWithBorders();
+    public double calculateAreaWithoutBorders() {
+        return calculateAreaWithBorders()-calculateArea();
+    }
 }

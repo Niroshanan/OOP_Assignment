@@ -22,12 +22,18 @@ public class Canvas {
         return totalArea;
     }
     public double totalAreaWithBorder(){
-
-        double totalAreaOfBorder = 0;
+        double totalAreaWithBorder = 0;
         for (Shape shape: canvasElements) {
-            totalAreaOfBorder += shape.calculateAreaWithBorders();
+            totalAreaWithBorder += shape.calculateAreaWithBorders();
         }
-        return totalAreaOfBorder;
+        return totalAreaWithBorder;
+    }
+    public double totalAreaWithoutBorder(){
+        double totalAreaWithoutBorder = 0;
+        for (Shape shape: canvasElements) {
+            totalAreaWithoutBorder += shape.calculateAreaWithoutBorders();
+        }
+        return totalAreaWithoutBorder;
     }
 
 }

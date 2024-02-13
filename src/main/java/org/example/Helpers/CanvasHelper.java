@@ -102,8 +102,7 @@ public class CanvasHelper {
     }
 
     public void calculateTotalAreaOfBorder() {
-        double totalAreaOfBorder = canvas.totalAreaWithBorder() - canvas.totalArea();
-        System.out.println("Total Area of Border is: " + totalAreaOfBorder);
+        System.out.println("Total Area of Border is: " + canvas.totalAreaWithoutBorder());
     }
 
     public void calculateTotalAreaWithoutBorder() {
