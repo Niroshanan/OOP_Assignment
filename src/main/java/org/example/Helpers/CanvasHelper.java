@@ -25,38 +25,9 @@ public class CanvasHelper {
             addNewElement();
         }
         switch (elementInput) {
-            case 1 -> {
-                System.out.print("Enter Length of a side:");
-                double len = takeUserInput();
-                if (len > 0) {
-                    Square square = new Square(len);
-                    canvas.addElement(square);
-                } else {
-                    System.out.println("Element Not Added");
-                }
-            }
-            case 2 -> {
-                System.out.print("Enter Length of rectangle:");
-                double length = takeUserInput();
-                System.out.print("Enter width of rectangle: ");
-                double width = takeUserInput();
-                if (length > 0 && width > 0) {
-                    Rectangle rectangle = new Rectangle(length, width);
-                    canvas.addElement(rectangle);
-                } else {
-                    System.out.println("Element Not Added");
-                }
-            }
-            case 3 -> {
-                System.out.print("Enter Radius of circle:");
-                double radius = takeUserInput();
-                if (radius > 0) {
-                    Circle circle = new Circle(radius);
-                    canvas.addElement(circle);
-                } else {
-                    System.out.println("Element Not Added");
-                }
-            }
+            case 1 -> addSquare();
+            case 2 -> addRectangle();
+            case 3 -> addCircle();
             case 9 -> {
             }
             default -> {
@@ -66,13 +37,45 @@ public class CanvasHelper {
         }
     }
 
+    private void addSquare() {
+        double len = takeUserInput("Enter Length of a side:");
+        if (len > 0) {
+            Square square = new Square(len);
+            canvas.addElement(square);
+        } else {
+            System.out.println("Element Not Added");
+        }
+    }
+
+    private void addCircle() {
+        double radius = takeUserInput("Enter Radius of circle:");
+        if (radius > 0) {
+            Circle circle = new Circle(radius);
+            canvas.addElement(circle);
+        } else {
+            System.out.println("Element Not Added");
+        }
+    }
+
+    private void addRectangle() {
+        double length = takeUserInput("Enter Length of rectangle:");
+        double width = takeUserInput("Enter width of rectangle: ");
+        if (length > 0 && width > 0) {
+            Rectangle rectangle = new Rectangle(length, width);
+            canvas.addElement(rectangle);
+        } else {
+            System.out.println("Element Not Added");
+        }
+    }
+
     public void calculateTotalArea() {
         System.out.println("Total Area of the Canvas is: " + canvas.totalArea());
     }
 
-    private double takeUserInput() {
-        double value=0;
+    private double takeUserInput(String message) {
+        double value = 0;
         String valueString;
+        System.out.print(message);
         try {
             valueString = canvasScanner.nextLine();
             value = Double.parseDouble(valueString);
