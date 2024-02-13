@@ -30,7 +30,7 @@ public class Main {
                 menuInput = Integer.parseInt(inputString);
             } catch (Exception e) {
                 System.out.println("Invalid Input");
-                loadMenu();
+                continue;
             }
             switch (menuInput) {
                 case 1 -> {
