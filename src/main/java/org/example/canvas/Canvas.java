@@ -17,9 +17,17 @@ public class Canvas {
     public double totalArea(){
         double totalArea = 0;
         for ( Shape shape: canvasElements) {
-            totalArea += shape.totalArea();
+            totalArea += shape.calculateArea();
         }
         return totalArea;
+    }
+    public double totalAreaWithBorder(){
+
+        double totalAreaOfBorder = 0;
+        for (Shape shape: canvasElements) {
+            totalAreaOfBorder += shape.calculateAreaWithBorders();
+        }
+        return totalAreaOfBorder;
     }
 
 }

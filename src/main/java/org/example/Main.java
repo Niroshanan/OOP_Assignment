@@ -9,36 +9,53 @@ import static java.lang.System.exit;
 public class Main {
 
     static Scanner scanner = new Scanner(System.in);
-    static CanvasHelper canvasHelper =  new CanvasHelper();
+    static CanvasHelper canvasHelper = new CanvasHelper();
 
     public static void main(String[] args) {
         loadMenu();
     }
-    static void loadMenu(){
-        System.out.println("-----AREA CALCULATOR-----");
-        System.out.println("1 -Add new Element\n2- Get Total Area \n9- EXIT ");
-        String inputString =scanner.nextLine();
+
+    static void loadMenu() {
+        System.out.println("\n-----AREA CALCULATOR-----");
+        System.out.println("1 -Add New Element\n" +
+                "2- Get Total Area Including Border\n" +
+                "3- Get Total Area of Only border \n" +
+                "4- Get Total Area Without Border \n" +
+                "9- EXIT ");
+        System.out.print("Enter Input: ");
+        String inputString = scanner.nextLine();
         int menuInput = 0;
         try {
             menuInput = Integer.parseInt(inputString);
-        }catch (Exception e){
-            System.out.println("Error "+ e);
+        } catch (Exception e) {
+            System.out.println("Invalid Input");
             loadMenu();
         }
-        switch (menuInput){
-            case 1:
+        switch (menuInput) {
+            case 1 -> {
                 canvasHelper.addNewElement();
                 loadMenu();
-                break;
-            case 2:
-                canvasHelper.calculateTotalArea();
+            }
+            case 2 -> {
+                canvasHelper.calculateTotalAreaIncludingBorder();
                 loadMenu();
-                break;
-            case 9:
+            }
+            case 3 -> {
+                canvasHelper.calculateTotalAreaOfBorder();
+                loadMenu();
+            }
+            case 4 -> {
+                canvasHelper.calculateTotalAreaWithoutBorder();
+                loadMenu();
+            }
+            case 9 -> {
                 System.out.println("Exited\n");
                 exit(0);
-            default:
+            }
+            default ->{
+                System.out.println("Incorrect Input");
                 loadMenu();
+            }
         }
     }
 }
